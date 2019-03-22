@@ -83,3 +83,26 @@ export const transformForecast = ({ list }, weather) => {
   weathers.push(getDayWeather(list, tmrwIdx + 16));
   return weathers;
 };
+
+/**
+ * Gets heading for forcast
+ *
+ * @param {object} weather
+ * @param {number} idx
+ * @returns
+ */
+export const getDayHeading = (weather, idx) => {
+  if (idx === 0) return 'Today';
+  if (idx === 1) return 'Tomorrow';
+  const day = new Date(weather.dt * 1000);
+  const days = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
+  ];
+  return days[day.getDay()];
+};
