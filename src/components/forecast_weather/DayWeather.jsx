@@ -1,6 +1,6 @@
 import React from 'react';
 import { getDayHeading } from '../../utils/transformation_util';
-import { getIcon } from '../../utils/icons_utils';
+import { getIcon } from '../../utils/icon_utils';
 
 const DayWeather = ({ weather, idx }) => {
   const heading = getDayHeading(weather, idx);
